@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="container-fluid" id="navbar1">
+      <a class="navbar-brand" routerLink="/">Logo</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mynavbar">
+        <ul class="navbar-nav me-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Account</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" routerLink="/profile">Profile</a></li>
+                  <li><a class="dropdown-item" routerLink="/orders">Orders</a></li>
+                  <li><a class="dropdown-item">Logout</a></li>
+                </ul>
+              </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/cart-page">Cart <span>{{cartQuantity}}</span></a>
+          </li>
+        </ul>
+        <div class="d-flex">
+          <input class="form-control me-2" #s type="text" placeholder="Search"
+            (keyup.enter)="search(s.value)"
+            [value]="searchTerm" />
+          <button class="btn btn-primary" type="button" (click)="search(s.value)">Search</button>
+        </div>
+      </div>
+    </div>
+</nav>
