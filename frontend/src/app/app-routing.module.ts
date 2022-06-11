@@ -11,7 +11,7 @@ const routes: Routes = [
   {path:'login', component:LoginComponent},
   {path:'signup', component:SignupComponent},
   {path: 'search/:searchTerm', component: HomeComponent },
-  {path: 'phone/:id', component:PhoneComponent},
+  {path: 'phones/:id', component:PhoneComponent},
   {path:'cart-page', component:CartPageComponent},
   {path :'', redirectTo : '/home', pathMatch : 'full'},
   {path :'', redirectTo : '/login', pathMatch : 'full'},

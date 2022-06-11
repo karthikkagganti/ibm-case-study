@@ -1,6 +1,6 @@
 <ul>
-    <li *ngFor="let phone of phones | async">
-    <a routerLink="/phone/{{phone.id}}">
+    <li *ngFor="let phone of phones | async"  (click)="phoneDetails(phone.id)">
+    <a routerLink="/phones/{{phone.id}}">
       <img [src]="phone.imageUrl" [alt]="phone.name" />
       <div class="content">
         <div class="name">

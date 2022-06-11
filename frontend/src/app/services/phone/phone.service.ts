@@ -12,7 +12,7 @@ export class PhoneService {
   constructor(private http:HttpClient) { }
 
   getAll(): Observable<any> {
-    return this.http.get(`${this.baseUrl}`+'phones');  ;
+    return this.http.get(`${this.baseUrl}`);
   }
 
   getAllPhonesBySearchTerm(searchTerm: string) {
@@ -24,7 +24,4 @@ export class PhoneService {
     return this.http.get(`${this.baseUrl}/${id}`);
   }
 
-  getPhonesList(): Observable<any> {
-    return this.http.get(`${this.baseUrl}`);
-  }
 }

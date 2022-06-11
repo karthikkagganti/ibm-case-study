@@ -19,6 +19,10 @@ export class HomeComponent implements OnInit {
   }
 
   reloadData() {
-    this.phones = this.phoneService.getPhonesList();
+    this.phones = this.phoneService.getAll();
+  }
+
+  phoneDetails(id: string) {
+    this.router.navigate(['details', id]);
   }
 }
