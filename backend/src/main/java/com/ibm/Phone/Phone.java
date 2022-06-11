@@ -16,6 +16,7 @@ public class Phone {
 	private String name;
 	private String description;
 	private double price;
+	private String imageUrl;
 	private boolean available;
 	private int stock;
 	
@@ -27,16 +28,15 @@ private Category category;
 	public Phone() {
 			}
 	
-	public Phone(String id, String name, String description, double price, boolean available, int stock,
-			String categoryId) {
+	public Phone(String id, String name, String description, double price,String imageUrl, boolean available, int stock) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.description = description;
-		this.price = price;
-		this.available = available;
-		this.stock = stock;
-		this.category = new Category(categoryId,"","");
+		this.setPrice(price);
+		this.imageUrl = imageUrl;
+		this.setAvailable(available);
+		this.setStock(stock);
 	}
 
 	public String getId() {
@@ -57,14 +57,40 @@ private Category category;
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
-	public Category getTopic() {
-		return category;
-	}
 
 	public void setTopic(Category topic) {
 		this.category = topic;
 	}
-	
-	
+
+	public double getPrice() {
+		return price;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
+	}
+
+	public boolean isAvailable() {
+		return available;
+	}
+
+	public void setAvailable(boolean available) {
+		this.available = available;
+	}
+
+	public int getStock() {
+		return stock;
+	}
+
+	public void setStock(int stock) {
+		this.stock = stock;
+	}
+
+	public String getImageUrl() {
+		return imageUrl;
+	}
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+	}
 }

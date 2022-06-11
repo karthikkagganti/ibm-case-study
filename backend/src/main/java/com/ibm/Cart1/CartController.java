@@ -19,7 +19,7 @@ public class CartController {
 	
 	@PostMapping("/categories/{categoryId}/phones/{id}/cart")
 	public void addToCart(@RequestBody Cart cart, @PathVariable String id) {
-		cart.setPhone(new Phone(id,"","",0.0,true,0,""));
+		//cart.setPhone(new Phone(id,"","",0.0,true,0,""));
 		cartService.addToCart(cart);
 	}
 	

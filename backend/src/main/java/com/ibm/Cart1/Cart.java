@@ -26,7 +26,7 @@ public class Cart {
 		this.id = id;
 		this.name = name;
 		this.quantity = quantity;
-		this.phone = new Phone(phoneId, "", "",0.0, true,0,"");
+		//this.phone = new Phone(phoneId, "", "",0.0, true,0,"");
 	}
 
 	public int getId() {
