@@ -13,10 +13,7 @@ export class PhoneComponent implements OnInit {
   phone!: Phone;
   constructor(activatedRoute:ActivatedRoute, phoneService: PhoneService,
     private cartService:CartService, private router: Router) {
-      activatedRoute.params.subscribe((params) => {
-        if(params['id'])
-        this.phone = phoneService.getPhoneById(params['id']);
-      })
+      
     }
 
   ngOnInit(): void {

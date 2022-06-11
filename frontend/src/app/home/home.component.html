@@ -1,5 +1,5 @@
 <ul>
-    <li *ngFor="let phone of phones">
+    <li *ngFor="let phone of phones | async">
     <a routerLink="/phone/{{phone.id}}">
       <img [src]="phone.imageUrl" [alt]="phone.name" />
       <div class="content">
