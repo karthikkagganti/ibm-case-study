@@ -1,5 +1,7 @@
 package com.ibm.Phone;
 
+import java.io.PrintStream;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -25,11 +27,16 @@ public class PhoneController {
 		return phoneService.getAllPhones();
 	}
 
+	@GetMapping("/phones/search/{name}")
+	public List<Phone> getPhonesByName(@PathVariable String name) {
+		return phoneService.getPhonesByName(name);
+	}
+	
 	@GetMapping("/phones/{id}")
 	public Phone getPhone(@PathVariable String id) {
 		return phoneService.getPhone(id);
 	}
-
+	
 	@PostMapping("/phones")
 	public void addPhone(@RequestBody Phone phone) {
 		phoneService.addPhone(phone);

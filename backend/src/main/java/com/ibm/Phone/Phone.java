@@ -93,4 +93,6 @@ private Category category;
 	public void setImageUrl(String imageUrl) {
 		this.imageUrl = imageUrl;
 	}
+	
+	
 }

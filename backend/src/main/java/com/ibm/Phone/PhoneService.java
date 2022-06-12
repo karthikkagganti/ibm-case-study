@@ -19,8 +19,15 @@ public class PhoneService {
 		phoneRepository.findAll()
 		.forEach(phones::add);
 		return phones;
+
 	}
 	
+	public List<Phone> getPhonesByName(String name){
+		List<Phone> phones = new ArrayList<>();
+		phoneRepository.findByNameLikeIgnoreCase("%"+name+"%")
+		.forEach(phones::add);
+		return phones;
+	}
 	public Phone getPhone(String id) {
 //		return topics.stream().filter(t-> t.getId().equals(id)).findFirst().get();
 		return phoneRepository.findById(id).get();
