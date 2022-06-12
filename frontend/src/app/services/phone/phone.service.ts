@@ -1,23 +1,32 @@
 import { Injectable } from '@angular/core';
-import { Phone } from 'src/app/model/phone.model';
-import { sample_phones } from 'src/data';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class PhoneService {
 
-  constructor() { }
+  private baseUrl = 'http://localhost:8880/phones';
+  private baseUrlSearch = 'http://localhost:8880/phones/search'; 
+  constructor(private http:HttpClient) { }
 
-  getAll(): Phone[] {
-    return sample_phones;
+  getAll(): Observable<any> {
+    return this.http.get(`${this.baseUrl}`);
   }
 
-  getAllPhonesBySearchTerm(searchTerm: string) {
-    return this.getAll().filter(phone => phone.name.toLowerCase().includes(searchTerm.toLowerCase()))
+  getAllPhonesBySearchTerm(term: string): Observable<any>{
+    return this.http.get(`${this.baseUrlSearch}/${term}`);
+    // return this.getAll().filter(phone => phone.name.toLowerCase().includes(searchTerm.toLowerCase()))
   }
 
-  getPhoneById(phoneId:string):Phone{
-    return this.getAll().find(phone => phone.id == phoneId) ?? new Phone();
+  getPhoneById(id:string):Observable<any>{
+    return this.http.get(`${this.baseUrl}/${id}`);
   }
+
+  createPhone(phone: Object): Observable<Object> {
+    return this.http.post(`${this.baseUrl}`, phone);
+  }
+
 }

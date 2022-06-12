@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { Phone } from '../model/phone.model';
 import { PhoneService } from '../services/phone/phone.service';
 
@@ -10,16 +11,18 @@ import { PhoneService } from '../services/phone/phone.service';
 })
 export class HomeComponent implements OnInit {
 
-  phones: Phone[] = [];
-  constructor(private phoneService:  PhoneService, activatedRoute: ActivatedRoute) {
-    activatedRoute.params.subscribe((params) => {
-      if (params['searchTerm'])
-        this.phones = this.phoneService.getAllPhonesBySearchTerm(params['searchTerm']);
-      else
-        this.phones = phoneService.getAll();
-    })
+  phones: Observable<Phone[]>;
+  constructor(private phoneService:  PhoneService, private router: Router) {
   }
-  ngOnInit(): void {
+  ngOnInit() {
+    this.reloadData();
   }
 
+  reloadData() {
+    this.phones = this.phoneService.getAll();
+  }
+
+  phoneDetails(id: string) {
+    this.router.navigate(['details', id]);
+  }
 }

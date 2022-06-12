@@ -10,16 +10,25 @@ import { CartService } from '../services/cart/cart.service';
   styleUrls: ['./phone.component.css']
 })
 export class PhoneComponent implements OnInit {
+
+  id: string;
   phone!: Phone;
-  constructor(activatedRoute:ActivatedRoute, phoneService: PhoneService,
+  constructor(private route:ActivatedRoute,private phoneService: PhoneService,
     private cartService:CartService, private router: Router) {
-      activatedRoute.params.subscribe((params) => {
-        if(params['id'])
-        this.phone = phoneService.getPhoneById(params['id']);
-      })
+      
     }
 
   ngOnInit(): void {
+
+    this.phone = new Phone;
+
+    this.id = this.route.snapshot.params['id'];
+    console.log(this.id);
+    this.phoneService.getPhoneById(this.id)
+    .subscribe(data => {
+      console.log(data)
+      this.phone = data;
+    }, error => console.log(error));
   }
 
   addToCart(){

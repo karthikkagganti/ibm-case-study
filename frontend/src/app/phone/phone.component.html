@@ -1,4 +1,21 @@
-<div *ngIf="phone.id" class="container">
+<div *ngIf="phone" class="container">
     <img [src]="phone.imageUrl" [alt]="phone.name"/>
+    <div class="details">
+        <div class="header">
+          <span class="id">
+            {{phone.id}}
+          </span>
+        </div>
+        <div>
+            <span class="name">
+                {{phone.name}}
+            </span>
+        </div>
+        <div class="price">
+            <span>
+              {{phone.price | currency:"INR"}}
+            </span>
+        </div>
     <button (click)="addToCart()">Add To Cart</button>
+    </div>
 </div>
