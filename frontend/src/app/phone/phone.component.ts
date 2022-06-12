@@ -23,7 +23,7 @@ export class PhoneComponent implements OnInit {
     this.phone = new Phone;
 
     this.id = this.route.snapshot.params['id'];
-
+    console.log(this.id);
     this.phoneService.getPhoneById(this.id)
     .subscribe(data => {
       console.log(data)

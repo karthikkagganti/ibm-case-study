@@ -15,9 +15,6 @@ export class NavbarComponent implements OnInit {
     cartService.getCartObservable().subscribe((newCart) => {
       this.cartQuantity = newCart.totalCount;
     })
-    activatedRoute.params.subscribe((params) => {
-      if(params['searchTerm']) this.searchTerm = params['searchTerm'];
-    });
    }
 
   ngOnInit(): void {
@@ -25,6 +22,6 @@ export class NavbarComponent implements OnInit {
 
   search(term:string):void{
     if(term)
-    this.router.navigateByUrl('/search/'+ term);
+    this.router.navigate(['/phones/search', term]);
   }
 }

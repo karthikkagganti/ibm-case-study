@@ -1,0 +1,20 @@
+<ul>
+    <li *ngFor="let phone of phones | async"  (click)="phoneDetails(phone.id)">
+    <a routerLink="/phones/{{phone.id}}">
+      <img [src]="phone.imageUrl" [alt]="phone.name" />
+      <div class="content">
+        <div class="name">
+          {{phone.name}}
+        </div>
+        <div class="des">
+            <p class="des">{{phone.description}}</p>
+        </div>
+        <div class="price">
+          <span>
+            {{phone.price | currency:"INR"}}
+          </span>
+        </div>
+      </div>
+    </a>
+  </li>
+</ul>
