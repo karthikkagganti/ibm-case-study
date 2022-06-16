@@ -79,5 +79,10 @@ public class UsersController {
 	public boolean check(@RequestBody Users users) {
 		return service.checklogin(users.getEmail(), users.getPassword());
 	}
+	
+	@PostMapping("/users/{email}/addAddress")
+	public Users addAddress(@RequestBody Users users) {
+		return service.addAddress(users);
+	}
 }
 

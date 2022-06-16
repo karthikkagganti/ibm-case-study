@@ -24,4 +24,7 @@ export class NavbarComponent implements OnInit {
     if(term)
     this.router.navigate(['/phones/search', term]);
   }
+  readLocalStorageValue(key:any):any {
+    return localStorage.getItem(key);
+}
 }

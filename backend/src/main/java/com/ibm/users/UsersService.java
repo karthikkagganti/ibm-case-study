@@ -53,5 +53,11 @@ public class UsersService{
 		
 	}
 
+	public Users addAddress(Users users) {
+		// TODO Auto-generated method stub
+		repo.save(users);
+		return repo.findById(users.getEmail()).get();
+	}
+
 }
 

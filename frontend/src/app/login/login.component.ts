@@ -18,7 +18,6 @@ export class LoginComponent implements OnInit {
   loginForm= new FormGroup({
     email:new FormControl(''),
     password: new FormControl(''),
-    
   })
   constructor(private route:ActivatedRoute,
     private userService:UserService,private cookie:CookieService, private router: Router) { }
@@ -42,7 +41,6 @@ export class LoginComponent implements OnInit {
         alert("wrong credentials");
       }
     }, error => console.log(error));
-    
   }
 }
 

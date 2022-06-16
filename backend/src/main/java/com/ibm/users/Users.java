@@ -16,9 +16,15 @@ public class Users {
 	private String name;
 //	@Column(length = 20)
 	private String mobno;
-//	@Column(length = 20)
+public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	//	@Column(length = 20)
 	private String password;
-	
+	private String address;
 	
 	//Getters and Setters
 	

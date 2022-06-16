@@ -4,5 +4,6 @@ export class User {
         public name : string = '',
         public password : string = '',
         public mobno : number = 0,
+        public address: String =""
     ){}
 }
