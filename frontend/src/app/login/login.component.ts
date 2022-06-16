@@ -3,6 +3,8 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import {Login} from '../model/login.model'
 import { UserService } from '../services/users/users.service';
+import { CookieService } from 'ngx-cookie-service';
+
 
 @Component({
   selector: 'app-login',
@@ -19,7 +21,7 @@ export class LoginComponent implements OnInit {
     
   })
   constructor(private route:ActivatedRoute,
-    private userService:UserService, private router: Router) { }
+    private userService:UserService,private cookie:CookieService, private router: Router) { }
 
   ngOnInit(): void {
     this.user= new Login;
@@ -32,6 +34,7 @@ export class LoginComponent implements OnInit {
     this.userService.checkUser(this.user)
     .subscribe(data => {
       console.log(data);
+      localStorage.setItem("authenticated","true");
       if(data){
         this.router.navigateByUrl("/home");
       }
