@@ -17,6 +17,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
 import { CommonModule } from '@angular/common';  
 import { CheckoutComponent } from './checkout/checkout.component';
+import { FinalComponent } from './final/final.component';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
     SearchComponent,
     AdminComponent,
     CheckoutComponent,
+    FinalComponent,
   ],
   imports: [
     BrowserModule,
