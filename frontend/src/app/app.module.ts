@@ -15,6 +15,7 @@ import { SearchComponent } from './search/search.component';
 import { AdminComponent } from './admin/admin.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { CookieService } from 'ngx-cookie-service';
     SignupComponent,
     SearchComponent,
     AdminComponent,
+    CheckoutComponent,
   ],
   imports: [
     BrowserModule,

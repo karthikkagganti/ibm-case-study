@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './admin/admin.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { PhoneComponent } from './phone/phone.component';
@@ -16,8 +17,8 @@ const routes: Routes = [
   {path: 'phones/:id', component:PhoneComponent},
   {path:'cart-page', component:CartPageComponent},
   {path:'admin', component:AdminComponent},
+  {path:'checkout', component:CheckoutComponent},
   {path :'', redirectTo : '/home', pathMatch : 'full'},
-  {path :'', redirectTo : '/login', pathMatch : 'full'},
   {path:'**', redirectTo: '/home', pathMatch: 'full'},
 ];
 
