@@ -16,10 +16,6 @@ public class UsersService{
 		repo.save(users);
 		return true;
 	}
-	public boolean editUser(Users users) {
-		repo.save(users);
-		return true;
-	}
 
 	public Users fetch(String email) {
 		return repo.findById(email).get();
@@ -61,10 +57,6 @@ public class UsersService{
 		// TODO Auto-generated method stub
 		repo.save(users);
 		return repo.findById(users.getEmail()).get();
-	}
-	
-	public Users getUsersName(String name) {
-		return repo.findByNameLikeIgnoreCase(name);
 	}
 
 }

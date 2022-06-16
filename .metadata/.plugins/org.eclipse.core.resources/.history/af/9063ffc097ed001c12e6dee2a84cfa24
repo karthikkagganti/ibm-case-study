@@ -10,5 +10,5 @@ import com.ibm.Phone.Phone;
 
 
 public interface UsersRepository extends JpaRepository<Users, String>{
-	Users findByNameLikeIgnoreCase(String name);
+	List<Users> findByNameLikeIgnoreCase(String name);
 }

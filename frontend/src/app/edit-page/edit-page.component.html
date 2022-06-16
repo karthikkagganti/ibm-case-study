@@ -3,8 +3,7 @@
         <div class="col-md-6">
             <div class="card">
                 <div class="text-center">
-                    <h1>Shopping signup</h1>
-                    <h5>signup here</h5><hr>
+                    <h5>Edit Your Profile</h5><hr>
                 </div>
                 <form [formGroup]="registerForm" (ngSubmit)="submit()">
                     <div class="mb-3">
@@ -19,22 +18,18 @@
                         <label class="form-label">Email address</label>
                         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="email">
                     </div>
+                    <!-- <div class="mb-3">
+                        <label class="form-label">Password</label>
+                        <input type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="password">
+                    </div> -->
                     <div class="mb-3">
                         <label class="form-label">Address</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="address">
+                        <input type="text" class="form-control" #exampleInputPassword2 formControlName="address">
                     </div>
-                    <div class="mb-3">
-                        <label class="form-label">Password</label>
-                        <input type="password" class="form-control" #exampleInputPassword1 formControlName="password">
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Confirm Password</label>
-                        <input type="password" class="form-control" #exampleInputPassword2>
-                    </div>
-                    <button type="submit" class="btn btn-primary">signup</button>
+                    <button type="submit" class="btn btn-primary">Edit</button>
                 </form>
-                <a routerLink="/login">Already Member? Click to Login</a>
             </div>
         </div>
     </div>
 </div>
+
