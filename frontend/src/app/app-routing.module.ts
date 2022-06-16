@@ -9,6 +9,9 @@ import { LoginComponent } from './login/login.component';
 import { PhoneComponent } from './phone/phone.component';
 import { SearchComponent } from './search/search.component';
 import { SignupComponent } from './signup/signup.component';
+import {ProfileComponent} from './profile/profile.component';
+import {EditPageComponent} from './edit-page/edit-page.component';
+
 
 const routes: Routes = [
   {path:'home', component:HomeComponent},
@@ -19,6 +22,8 @@ const routes: Routes = [
   {path:'cart-page', component:CartPageComponent},
   {path:'admin', component:AdminComponent},
   {path:'checkout', component:CheckoutComponent},
+  {path:'edit-page', component:EditPageComponent},
+  {path:'profile', component:ProfileComponent},
   {path:'thankyou', component:FinalComponent},
   {path :'', redirectTo : '/home', pathMatch : 'full'},
   {path:'**', redirectTo: '/home', pathMatch: 'full'},

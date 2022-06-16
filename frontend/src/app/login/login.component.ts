@@ -37,6 +37,8 @@ export class LoginComponent implements OnInit {
         this.userService.getUser(this.loginForm.value.email)
         .subscribe(data=>{
           localStorage.setItem("curruser", data.name)
+          localStorage.setItem("curremail", data.email)
+          localStorage.setItem("currpass", data.password)
           console.log(localStorage.getItem("curruser"));
         })
         localStorage.setItem("authenticated","true");

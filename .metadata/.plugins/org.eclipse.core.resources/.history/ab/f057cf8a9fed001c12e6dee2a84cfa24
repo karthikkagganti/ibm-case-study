@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 
-@CrossOrigin("http://localhost:4200")
+@CrossOrigin("http://localhost:4200/profile")
 @RestController
 public class UsersController {
 	
@@ -62,15 +62,15 @@ public class UsersController {
 	
 	//for updating the user's profile page
 	@PutMapping("users/{email}")
-	public boolean update(@RequestBody Users users, @PathVariable String email) {
+	public ResponseEntity<Users> update(@RequestBody Users users, @PathVariable String email) {
 		try {
 			Users existUser = service.fetch(email); 
 			System.out.print(existUser);
 			service.save(users);
-			return true;
+			return new ResponseEntity<Users>(HttpStatus.OK);
 		}
 		catch(NoSuchElementException e) {
-			return false; 
+			return new ResponseEntity<Users>(HttpStatus.NOT_FOUND); 
 		}
 	}
 
@@ -80,8 +80,12 @@ public class UsersController {
 		return service.checklogin(users.getEmail(), users.getPassword());
 	}
 	
+	@PostMapping("/users/{email}/addAddress")
+	public Users addAddress(@RequestBody Users users) {
+		return service.addAddress(users);
+	}
 	
-	@GetMapping("/users/profile/{name}")
+	@PostMapping("/profile/{name}")
 	public Users getUserName(@PathVariable String name) {
 		return service.getUsersName(name);
 	}

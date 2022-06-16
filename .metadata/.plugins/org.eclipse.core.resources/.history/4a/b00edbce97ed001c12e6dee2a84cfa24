@@ -16,10 +16,6 @@ public class UsersService{
 		repo.save(users);
 		return true;
 	}
-	public boolean editUser(Users users) {
-		repo.save(users);
-		return true;
-	}
 
 	public Users fetch(String email) {
 		return repo.findById(email).get();
@@ -64,7 +60,7 @@ public class UsersService{
 	}
 	
 	public Users getUsersName(String name) {
-		return repo.findByNameLikeIgnoreCase(name);
+		return repo.findByNameLikeIgnoreCase(name).get();
 	}
 
 }

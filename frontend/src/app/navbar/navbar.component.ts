@@ -30,6 +30,7 @@ export class NavbarComponent implements OnInit {
 }
 logout(){
   localStorage.setItem("authenticated","false");
-  
+  localStorage.setItem("curruser","");
+  localStorage.setItem("curremail","");
 }
 }
