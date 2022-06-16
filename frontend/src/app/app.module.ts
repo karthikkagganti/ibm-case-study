@@ -19,6 +19,8 @@ import { CommonModule } from '@angular/common';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { ProfileComponent } from './profile/profile.component';
 import { EditPageComponent } from './edit-page/edit-page.component';
+import { FinalComponent } from './final/final.component';
+
 
 
 @NgModule({
@@ -33,8 +35,12 @@ import { EditPageComponent } from './edit-page/edit-page.component';
     SearchComponent,
     AdminComponent,
     CheckoutComponent,
+
     ProfileComponent,
     EditPageComponent,
+
+    FinalComponent,
+
   ],
   imports: [
     BrowserModule,

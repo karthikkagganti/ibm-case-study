@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './admin/admin.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { FinalComponent } from './final/final.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { PhoneComponent } from './phone/phone.component';
@@ -23,6 +24,7 @@ const routes: Routes = [
   {path:'checkout', component:CheckoutComponent},
   {path:'edit-page', component:EditPageComponent},
   {path:'profile', component:ProfileComponent},
+  {path:'thankyou', component:FinalComponent},
   {path :'', redirectTo : '/home', pathMatch : 'full'},
   {path:'**', redirectTo: '/home', pathMatch: 'full'},
 ];
