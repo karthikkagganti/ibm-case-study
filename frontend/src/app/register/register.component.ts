@@ -49,6 +49,5 @@ export class LoginComponent implements OnInit {
         alert("wrong credentials");
       }
     }, error => console.log(error));
-    
   }
 }
