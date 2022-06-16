@@ -16,7 +16,11 @@ import { AdminComponent } from './admin/admin.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { CommonModule } from '@angular/common';  
+=======
+import { CheckoutComponent } from './checkout/checkout.component';
+>>>>>>> a6e3af6c2a79f7cabe57afd2041c28277780b0af
 =======
 import { CheckoutComponent } from './checkout/checkout.component';
 >>>>>>> a6e3af6c2a79f7cabe57afd2041c28277780b0af
