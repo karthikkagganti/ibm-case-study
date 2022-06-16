@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'frontend';
 
-  get dataV(): any{
+  get auth(): any{
     return localStorage.getItem('authenticated');
   }
 
@@ -20,4 +20,5 @@ export class AppComponent {
   get(){
     localStorage.setItem("authenticated", "false");
   }
+  
 }

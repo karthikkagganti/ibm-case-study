@@ -57,6 +57,7 @@
         </div>
     </div>
     <div class="row mt-4 d-flex align-items-center">
+        <ng-template *ngIf="readLocalStorageValue('Role')== 'admin'">
         <div class="col-sm-6 order-md-2 text-right">
             <a routerLink="/checkout" class="btn btn-primary mb-4 btn-lg pl-5 pr-5">Checkout</a>
         </div>
