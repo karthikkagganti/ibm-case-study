@@ -1,0 +1,14 @@
+1655121771501	Rename field 'fullname'
+1655124738584	Copy package
+1655124752155	Rename type 'Users'
+1655124767812	Rename type 'UsersController'
+1655124776034	Rename type 'UserService'
+1655124783283	Rename type 'UsersRepository'
+1655124797532	Rename type 'UserService'
+1655268827298	Rename field 'userService'
+1655268894992	Rename field 'userRepository'
+1655293318851	Copy compilation units
+1655293332263	Rename type 'Admin'
+1655293346146	Rename type 'AdminController'
+1655293356012	Rename type 'AdminRepository'
+1655293363348	Rename type 'AdminService'

@@ -1,0 +1,8 @@
+package com.ibm.users;
+
+
+import org.springframework.data.repository.CrudRepository;
+
+public class UsersRepository extends CrudRepository<Users, String> {
+
+}

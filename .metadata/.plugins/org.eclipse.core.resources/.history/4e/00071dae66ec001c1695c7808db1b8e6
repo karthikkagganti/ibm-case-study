@@ -1,0 +1,25 @@
+package com.ibm.admin;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class AdminService {
+
+	@Autowired
+	private AdminRepository userRepository;
+	
+	public List<Admin> getUsers() {
+		List<Admin> users = new ArrayList<Admin>();
+		userRepository.findAll().forEach(users::add);
+		return users;
+	}
+	public void addUsers(Admin u) {
+		userRepository.save(u);
+	}
+	
+	public Admin getUser(String id) {
+		return userRepository.findById(id).get();
+	}
+}

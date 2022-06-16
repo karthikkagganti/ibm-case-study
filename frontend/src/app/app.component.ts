@@ -7,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'frontend';
+
+  get dataV(): any{
+    return localStorage.getItem('authenticated');
+  }
+
+  delete(){
+    localStorage.removeItem('authenticated');
+  }
+
+  get(){
+    localStorage.setItem("authenticated", "false");
+  }
 }

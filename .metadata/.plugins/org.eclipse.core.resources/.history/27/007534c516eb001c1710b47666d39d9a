@@ -1,0 +1,17 @@
+package com.ibm.users;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class UserService {
+
+	@Autowired
+	private UsersRepository userRepository;
+	
+	public List<Users> getUsers() {
+		List<Users> users = new ArrayList()<Users>;
+		userRepository.findAll().forEach(null);;
+	}
+}

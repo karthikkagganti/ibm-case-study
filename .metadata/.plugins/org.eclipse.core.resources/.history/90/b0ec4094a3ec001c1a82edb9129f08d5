@@ -1,0 +1,55 @@
+package com.ibm.users;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.ibm.entity.Users;
+import com.ibm.repo.UsersRepository;
+import com.ibm.service.UserService;
+
+@Service
+public class UsersService{
+
+	
+	@Autowired
+	private UsersRepository repo;
+	
+	public void save(Users users) {
+		repo.save(users);
+
+	}
+
+	public Users fetch(String email) {
+		return repo.findById(email).get();
+	}
+
+	public List<Users> list() {
+		return repo.findAll();
+	}
+
+	public boolean checkuser(String email) {
+		return repo.existsById(email);
+	}
+
+	public void delete(String email) {
+		repo.deleteById(email);
+	}
+
+	public boolean checklogin(String email, String password) {
+		if (checkuser(email)) {
+			Users users = fetch(email);
+			if(users.getPassword().equals(password)) {
+				return true;
+			}
+			else {
+				return false;
+			}
+		}
+		else {
+			return false;
+		}	}
+
+}
+
