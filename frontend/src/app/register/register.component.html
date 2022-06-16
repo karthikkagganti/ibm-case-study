@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="text-center">
+                    <h1>Shopping Login</h1>
+                    <h5>Login here</h5><hr>
+                </div>
+                <form [formGroup]="registerForm" (ngSubmit)="submit()">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label" >Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label" >Full Name</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label" >Mobile Number</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="mobno">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label" >Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword2" class="form-label" >Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword2">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword2" class="form-label" >Address</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" formControlName="address">
+                    </div>
+                    <button type="submit" class="btn btn-primary" >Login</button>
+                </form>
+                <a routerLink="/signup">New User? Click to signup</a>
+            </div>
+        </div>
+    </div>
+</div>

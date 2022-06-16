@@ -13,6 +13,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { SearchComponent } from './search/search.component';
 import { AdminComponent } from './admin/admin.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CookieService } from 'ngx-cookie-service';
+import { CommonModule } from '@angular/common';  
+import { CheckoutComponent } from './checkout/checkout.component';
+import { FinalComponent } from './final/final.component';
+
 
 @NgModule({
   declarations: [
@@ -24,15 +30,19 @@ import { AdminComponent } from './admin/admin.component';
     LoginComponent,
     SignupComponent,
     SearchComponent,
-    AdminComponent
+    AdminComponent,
+    CheckoutComponent,
+    FinalComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+ReactiveFormsModule,
+CommonModule
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

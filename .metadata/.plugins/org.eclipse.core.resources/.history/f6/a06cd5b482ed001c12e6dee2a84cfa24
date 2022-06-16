@@ -1,0 +1,5 @@
+package com.ibm.address;
+
+public class Address {
+	
+}

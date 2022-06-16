@@ -6,14 +6,24 @@
       </button>
       <div class="collapse navbar-collapse" id="mynavbar">
         <ul class="navbar-nav me-auto">
+          <div *ngIf="readLocalStorageValue('authenticated')== 'true';else lll">
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Account</a>
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">{{auth}}</a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" routerLink="/profile">Profile</a></li>
-                  <li><a class="dropdown-item" routerLink="/orders">Orders</a></li>
-                  <li><a class="dropdown-item">Logout</a></li>
+                  <li><a class="dropdown-item" (click)="logout()">Logout</a></li>
                 </ul>
               </li>
+            </div>
+          <ng-template #lll>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">My Account</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" routerLink="/profile">Profile</a></li>
+                <li><a class="dropdown-item" routerLink="/login">Login</a></li>
+              </ul>
+            </li>
+          </ng-template>
           <li class="nav-item">
             <a class="nav-link" routerLink="/cart-page"><i class="bi bi-cart"></i><span>{{cartQuantity}}</span></a>
           </li>

@@ -18,6 +18,7 @@ export class CartPageComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    console.log(localStorage.getItem("authenticated"));
   }
 
   removeFromCart(cartItem:CartItem){

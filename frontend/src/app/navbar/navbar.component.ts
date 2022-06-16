@@ -16,12 +16,20 @@ export class NavbarComponent implements OnInit {
       this.cartQuantity = newCart.totalCount;
     })
    }
-
+   get auth(): any{
+    return localStorage.getItem('curruser');
+  }
   ngOnInit(): void {
   }
-
   search(term:string):void{
     if(term)
     this.router.navigate(['/phones/search', term]);
   }
+  readLocalStorageValue(key:any):any {
+    return localStorage.getItem(key);
+}
+logout(){
+  localStorage.setItem("authenticated","false");
+  
+}
 }

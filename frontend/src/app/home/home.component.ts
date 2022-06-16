@@ -16,6 +16,8 @@ export class HomeComponent implements OnInit {
   }
   ngOnInit() {
     this.reloadData();
+    // localStorage.setItem("authenticated", "false");
+    console.log(localStorage.getItem("authenticated"));
   }
 
   reloadData() {

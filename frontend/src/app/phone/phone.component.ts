@@ -26,7 +26,7 @@ export class PhoneComponent implements OnInit {
     console.log(this.id);
     this.phoneService.getPhoneById(this.id)
     .subscribe(data => {
-      console.log(data)
+      console.log(data);
       this.phone = data;
     }, error => console.log(error));
   }

@@ -6,16 +6,16 @@
                     <h1>Shopping Login</h1>
                     <h5>Login here</h5><hr>
                 </div>
-                <form>
+                <form [formGroup]="loginForm" (ngSubmit)="submit()">
                     <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <label for="exampleInputEmail1" class="form-label" >Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="email">
                     </div>
                     <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1">
+                        <label for="exampleInputPassword1" class="form-label" >Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password">
                     </div>
-                    <button type="submit" class="btn btn-primary">Login</button>
+                    <button type="submit" class="btn btn-primary" >Login</button>
                 </form>
                 <a routerLink="/signup">New User? Click to signup</a>
             </div>
