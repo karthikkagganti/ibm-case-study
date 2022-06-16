@@ -12,9 +12,9 @@ public class UsersService{
 	@Autowired
 	private UsersRepository repo;
 	
-	public boolean save(Users users) {
+	public void save(Users users) {
 		repo.save(users);
-		return true;
+
 	}
 
 	public Users fetch(String email) {

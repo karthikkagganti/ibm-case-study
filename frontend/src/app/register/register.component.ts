@@ -12,7 +12,7 @@ import { User } from '../model/user.model';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-export class LoginComponent implements OnInit {
+export class RegisterComponent implements OnInit {
 
   id:String;
   user!:User;
@@ -41,9 +41,8 @@ export class LoginComponent implements OnInit {
     this.userService.createUser(this.user)
     .subscribe(data => {
       console.log(data);
-      localStorage.setItem("authenticated","true");
       if(data){
-        this.router.navigateByUrl("/home");
+        this.router.navigateByUrl("/login");
       }
       else{
         alert("wrong credentials");

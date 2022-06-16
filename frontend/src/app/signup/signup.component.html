@@ -6,26 +6,30 @@
                     <h1>Shopping signup</h1>
                     <h5>signup here</h5><hr>
                 </div>
-                <form>
+                <form [formGroup]="registerForm" (ngSubmit)="submit()">
                     <div class="mb-3">
                         <label class="form-label">Name</label>
-                        <input name="name" class="form-control" id="Name" aria-describedby="emailHelp">
+                        <input name="name" class="form-control" id="Name" aria-describedby="emailHelp" formControlName="name">
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Mobile Number</label>
-                        <input type="phone" class="form-control" id="tel" aria-describedby="emailHelp">
+                        <input type="phone" class="form-control" id="tel" aria-describedby="emailHelp" formControlName="mobno">
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="email">
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1">
+                        <input type="password" class="form-control" #exampleInputPassword1 formControlName="password">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Confirm Password</label>
+                        <input type="password" class="form-control" #exampleInputPassword2>
                     </div>
                     <button type="submit" class="btn btn-primary">signup</button>
                 </form>
-                <a routerLink="/Login">Already Member? Click to Login</a>
+                <a routerLink="/login">Already Member? Click to Login</a>
             </div>
         </div>
     </div>

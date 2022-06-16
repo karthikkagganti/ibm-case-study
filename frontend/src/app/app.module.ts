@@ -15,6 +15,7 @@ import { SearchComponent } from './search/search.component';
 import { AdminComponent } from './admin/admin.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
+import { CommonModule } from '@angular/common';  
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { CookieService } from 'ngx-cookie-service';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-ReactiveFormsModule
+ReactiveFormsModule,
+CommonModule
   ],
   providers: [CookieService],
   bootstrap: [AppComponent]

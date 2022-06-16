@@ -33,8 +33,13 @@ export class LoginComponent implements OnInit {
     this.userService.checkUser(this.user)
     .subscribe(data => {
       console.log(data);
-      localStorage.setItem("authenticated","true");
       if(data){
+        this.userService.getUser(this.loginForm.value.email)
+        .subscribe(data=>{
+          localStorage.setItem("curruser", data.name)
+          console.log(localStorage.getItem("curruser"));
+        })
+        localStorage.setItem("authenticated","true");
         this.router.navigateByUrl("/home");
       }
       else{

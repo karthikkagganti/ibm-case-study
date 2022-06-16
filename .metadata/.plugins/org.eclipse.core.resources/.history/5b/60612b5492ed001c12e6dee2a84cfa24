@@ -49,8 +49,8 @@ public class UsersController {
 
 	//to create a signup for a new User
 	@PostMapping(value = "/users/signup")
-	public boolean add(@RequestBody Users users ) {
-		return service.save(users);
+	public void add(@RequestBody Users users ) {
+		service.save(users);
 //		return "Added user with Name: "+ users.getFullname();
 	}
 
